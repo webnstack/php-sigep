@@ -130,9 +130,9 @@ class CalcPrecoPrazo
             }
         }
 
-        if (class_exists('\StaLib_Logger')) {
-            \StaLib_Logger::log('Retorno SIGEP: ' . print_r($r, true));
-        }
+//        if (class_exists('\StaLib_Logger')) {
+//            \StaLib_Logger::log('Retorno SIGEP: ' . print_r($r, true));
+//        }
 
         $retorno = array();
         if (is_object($r) && $r->CalcPrecoPrazoResult && is_object($r->CalcPrecoPrazoResult) 

@@ -1,3 +1,5 @@
+###Versão oficial [https://github.com/stavarengo/php-sigep]
+###Class de log foi removido para evitar conflito com o magento
 ###Ajude o projeto a crescer. Envie pull request de suas alterações no código fonte ou na documentação do projeto.
 
 PHP SIGEP - Correios

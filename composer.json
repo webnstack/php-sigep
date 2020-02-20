@@ -1,6 +1,6 @@
 {
     "name": "tcesarpinho/php-sigep",
-    "version": "0.0.1",
+    "version": "2.1.0",
     "type": "library",
     "description": "Integração com Web Service do Correios. Gera etiquetas, consulta preços e prazos, imprime etiquetas e PLP, etc.",
     "keywords": ["correios", "sigep"],
@@ -14,9 +14,15 @@
         "php": ">=5.1.0",
         "tcesarpinho/php-sigep-fpdf": ">=0.0.1"
     },
+    "replace": {
+        "tcesarpinho/php-sigep": ">=0.0.1"
+    },
     "autoload": {
         "psr-0": {
             "PhpSigep": "src/"
+        },
+        "psr-4": {
+            "PhpSigep\\": "src/"
         }
     },
     "license": "MIT",

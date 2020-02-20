@@ -1,5 +1,5 @@
 {
-    "name": "tcesarpinho/php-sigep",
+    "name": "webnstack/php-sigep",
     "version": "2.1.1",
     "type": "library",
     "description": "Integração com Web Service do Correios. Gera etiquetas, consulta preços e prazos, imprime etiquetas e PLP, etc.",

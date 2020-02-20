@@ -36,7 +36,7 @@ class ConsultaCep
 				$bairro = isset(SoapClientFactory::convertEncoding($r->return->bairro)) ? SoapClientFactory::convertEncoding($r->return->bairro) : "";
                 $consultaCepResposta->setBairro($bairro);
 				$cep = isset($r->return->cep) ? $r->return->cep : "";
-                $consultaCepResposta->setCep($rcep);
+                $consultaCepResposta->setCep($cep);
 				$cidade = isset(SoapClientFactory::convertEncoding($r->return->cidade)) ? SoapClientFactory::convertEncoding($r->return->cidade) : "";
                 $consultaCepResposta->setCidade($cidade);
 				$complemento = isset(SoapClientFactory::convertEncoding($r->return->complemento)) ? SoapClientFactory::convertEncoding($r->return->complemento) : "";
@@ -51,8 +51,8 @@ class ConsultaCep
                 $consultaCepResposta->setUf($uf);
                 $result->setResult($consultaCepResposta);
              } else {
-                 $errorCode = 0;
-                 $errorMsg = "Resposta em branco. Confirme se o CEP '$cep' realmente existe.";
+				 $errorCode = 0;
+				 $errorMsg = "Resposta em branco. Confirme se o CEP '$cep' realmente existe.";
              }
         } else {
             $errorCode = 0;

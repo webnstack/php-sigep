@@ -32,14 +32,23 @@ class ConsultaCep
         } else if ($r instanceof \stdClass) {
              if (property_exists($r, 'return') && $r->return instanceof \stdClass) {
                 $consultaCepResposta = new ConsultaCepResposta();
-                $consultaCepResposta->setBairro(SoapClientFactory::convertEncoding($r->return->bairro));
-                $consultaCepResposta->setCep($r->return->cep);
-                $consultaCepResposta->setCidade(SoapClientFactory::convertEncoding($r->return->cidade));
-                $consultaCepResposta->setComplemento1(SoapClientFactory::convertEncoding($r->return->complemento));
-                $consultaCepResposta->setComplemento2(SoapClientFactory::convertEncoding($r->return->complemento2));
-                $consultaCepResposta->setEndereco(SoapClientFactory::convertEncoding($r->return->end));
-                $consultaCepResposta->setId($r->return->id);
-                $consultaCepResposta->setUf($r->return->uf);
+				
+				$bairro = isset(SoapClientFactory::convertEncoding($r->return->bairro)) ? SoapClientFactory::convertEncoding($r->return->bairro) : "";
+                $consultaCepResposta->setBairro($bairro);
+				$cep = isset($r->return->cep) ? $r->return->cep : "";
+                $consultaCepResposta->setCep($rcep);
+				$cidade = isset(SoapClientFactory::convertEncoding($r->return->cidade)) ? SoapClientFactory::convertEncoding($r->return->cidade) : "";
+                $consultaCepResposta->setCidade($cidade);
+				$complemento = isset(SoapClientFactory::convertEncoding($r->return->complemento)) ? SoapClientFactory::convertEncoding($r->return->complemento) : "";
+                $consultaCepResposta->setComplemento1($complemento);
+				$complemento2 = isset(SoapClientFactory::convertEncoding($r->return->complemento2)) ? SoapClientFactory::convertEncoding($r->return->complemento2) : "";
+                $consultaCepResposta->setComplemento2($complemento2);
+				$end = isset(SoapClientFactory::convertEncoding($r->return->end)) ? SoapClientFactory::convertEncoding($r->return->end) : "";
+                $consultaCepResposta->setEndereco($end);
+				$id = isset($r->return->id) ? $r->return->id : "";
+                $consultaCepResposta->setId($id);
+				$uf = isset($r->return->uf) ? $r->return->uf : "";
+                $consultaCepResposta->setUf($uf);
                 $result->setResult($consultaCepResposta);
              } else {
                  $errorCode = 0;
